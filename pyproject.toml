@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "celery-example"
+version = "0.1.0"
+description = ""
+authors = ["Syber.Nomad <10252496+sybernomad@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+celery = {extras = ["redis"], version = "^5.3.6"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+pre-commit = "^3.6.0"
+
+[tool.poetry.scripts]
+alpha = "alpha.app:main"
+bravo = "bravo.app:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+exclude = '\.git|__pycache__'
+experimental-string-processing = true
+
+[tool.isort]
+profile = "black"
+skip = []
